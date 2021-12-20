@@ -15,7 +15,6 @@ $scale: (
 // ----------
 // LAYOUT
 // ----------
-
 div.container {
   width: 90%;
   max-width: 45rem;
@@ -52,7 +51,7 @@ h1 {
 p {
   max-width: 70ch;
   font-family: $font--sans-serif;
-  line-height: 1.8;
+  line-height: 2;
   & + * {
     margin-top: map.get($scale, 600);
   }
@@ -60,5 +59,20 @@ p {
   &.tagline {
     font-family: $font--cursive;
     font-size: $font-size--title;
+    line-height: 1.5;
   }
+}
+
+// ----------
+// IMAGES
+// ----------
+img#global-background {
+  z-index: -1;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 45rem;
+  opacity: .04;
 }
