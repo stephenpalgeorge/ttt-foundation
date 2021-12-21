@@ -2,6 +2,10 @@
 @set('title', 'Home')
 @set('description', '<meta name="description" content="These Three Things Foundation, bringing faith, hope and love to the people and places that need them.">')
 
+@section('assets')
+  <link rel="stylesheet" href="css/components/link-button.css">
+@end
+
 @section('content')
   <main>
     <div class="container">
@@ -15,6 +19,28 @@
         we are also a platform for voices otherwise unheard, and a network for ideas 
         otherwise adrift. Use the links below to find our more about what we do.
       </p>
+
+      <div class="link-row">
+        @!component('components/link-button', {
+          path: '/think-tank',
+          label: 'Think Tank',
+        })
+
+        @!component('components/link-button', {
+          path: '/fund',
+          label: 'Fund',
+        })
+
+        @!component('components/link-button', {
+          path: '/network',
+          label: 'Network',
+        })
+
+        @!component('components/link-button', {
+          path: '/platform',
+          label: 'Platform',
+        })
+      </div>
     </div>
   </main>
 @end
