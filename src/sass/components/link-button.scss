@@ -37,4 +37,11 @@ $link-gap: map.get(var.$scale, 700) * .5;
   * + & {
     margin-top: map.get(var.$scale, 800);
   }
+
+  @media screen and (max-width: 575px) {
+    .link-button {
+      width: 100%;
+      text-align: center;
+    }
+  }
 }
