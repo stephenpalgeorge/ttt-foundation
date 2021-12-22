@@ -1,0 +1,6 @@
+@use 'sass:math';
+
+@function extend-scale($factor, $multiplier: 1.25) {
+  $offset: math.div($factor, 100) - 4;
+  @return math.pow($multiplier, $offset);
+}

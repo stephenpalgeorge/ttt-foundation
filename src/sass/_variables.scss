@@ -19,6 +19,8 @@ $font--serif: Georgia, 'Times New Roman', serif;
 $font--sans-serif: 'Open Sans', Helvetica, sans-serif;
 $font--cursive: 'Lovers Quarrel', cursive;
 
+$font-size--base: map.get($scale, 400);
+$font-size--lead: map.get($scale, 500);
 $font-size--title: map.get($scale, 900);
 
 $clr--light: #FFF;

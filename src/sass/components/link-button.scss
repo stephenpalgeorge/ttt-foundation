@@ -1,6 +1,9 @@
 @use 'sass:map';
 @use '../variables' as var;
 
+$link-slant: 1.2rem;
+$link-gap: map.get(var.$scale, 700) * .5;
+
 .link-button {
   position: relative;
   display: inline-block;
@@ -12,22 +15,23 @@
   text-transform: uppercase;
   text-decoration: none;
 
-  clip-path: polygon(1.2rem 0%, 100% 0%, 100% 50%, 100% 100%, 0 100%);
+  clip-path: polygon($link-slant 0%, 100% 0%, 100% 50%, 100% 100%, 0 100%);
   transition: clip-path .25s ease;
   &:hover {
     text-decoration: underline;
-    clip-path: polygon(0% 0%, calc(100% - 1.2rem) 0%, 100% 50%, calc(100% - 1.2rem) 100%, 0 100%);
+    text-decoration-thickness: .2em;
+    clip-path: polygon(0% 0%, calc(100% - $link-slant) 0%, 100% 50%, calc(100% - $link-slant) 100%, 0 100%);
   }
 }
 
 .link-row {
   display: flex;
   flex-flow: row wrap;
-  margin-inline: map.get(var.$scale, 700) * -.5;
+  margin-inline: $link-gap * -1;
 
   .link-button {
-    margin-inline: map.get(var.$scale, 700) * .5;
-    margin-block-end: map.get(var.$scale, 700) * .5;
+    margin-inline: $link-gap;
+    margin-block-end: $link-gap;
   }
 
   * + & {
