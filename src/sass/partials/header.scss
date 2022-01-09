@@ -6,7 +6,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var.$clr--light;
+  background-color: map.get(var.$colours, light);
   z-index: 1;
 
   nav {
@@ -17,8 +17,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(var.$clr--dark, .1);
-    box-shadow: 0 .6rem .5rem -.5rem rgba(var.$clr--dark, .28);
+    border-bottom: 1px solid rgba(map.get(var.$colours, dark), .1);
+    box-shadow: 0 .6rem .5rem -.5rem rgba(map.get(var.$colours, dark), .28);
 
     .site-branding img {
       width: map.get(var.$scale, 800);
@@ -34,9 +34,9 @@ header {
       }
 
       li a {
-        font-family: var.$font--sans-serif;
+        font-family: map.get(var.$fonts, sans-serif);
         text-transform: uppercase;
-        color: var.$clr--dark;
+        color: map.get(var.$colours, dark);
         text-decoration: none;
 
         &:hover {

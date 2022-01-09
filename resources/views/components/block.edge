@@ -1,0 +1,28 @@
+<!--
+  Variables that can be passed into the `section` component:
+  - title [string]: The title text for the section. Rendered as an h2. *Required*
+  - bodyText [string]: The longer description text that floats above the image content. *Required*
+  - linkUrl [string]: The target url for the section button.
+  - linkLabel [string]: The text that will be displayed in the button.
+  - imageSrc [string]: Path to the image resource.
+  - imageAlt [string]: Alternative text for the image.
+-->
+
+<section class="block {{ classes ? classes : '' }}" id="{{ id ? id : '' }}">
+  <div class="text-content">
+    <div class="section-header">
+      <h2>{{ title }}</h2>
+      @if(linkUrl && linkLabel)
+        <a href="{{ linkUrl }}">{{ linkLabel }}</a>
+      @end
+    </div>
+
+    <div class="card">
+      <p>{{ bodyText }}</p>
+    </div>
+  </div>
+
+  <div class="image-content">
+    <img src="{{ imageSrc }}" alt="{{ imageAlt }}">
+  </div>
+</section>

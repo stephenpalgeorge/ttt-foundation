@@ -1,26 +1,25 @@
 @use 'sass:map';
-@use '../variables' as var;
+@use '../variables' as *;
 
-$link-slant: 1.2rem;
-$link-gap: map.get(var.$scale, 700) * .5;
+$link-gap: map.get($scale, 700) * .5;
 
 .link-button {
   position: relative;
   display: inline-block;
-  padding: map.get(var.$scale, 300) map.get(var.$scale, 800);
-  background-color: var.$clr--dark;
-  color: var.$clr--light;
-  font-family: var.$font--sans-serif;
+  padding: map.get($scale, 400) map.get($scale, 800);
+  background-color: map.get($colours, dark);
+  color: map.get($colours, light);
+  font-family: map.get($fonts, sans-serif);
   font-weight: 900;
   text-transform: uppercase;
   text-decoration: none;
 
-  clip-path: polygon($link-slant 0%, 100% 0%, 100% 50%, 100% 100%, 0 100%);
+  clip-path: polygon(1.2rem 0%, 100% 0%, 100% 50%, 100% 100%, 0 100%);
   transition: clip-path .25s ease;
   &:hover {
     text-decoration: underline;
     text-decoration-thickness: .2em;
-    clip-path: polygon(0% 0%, calc(100% - $link-slant) 0%, 100% 50%, calc(100% - $link-slant) 100%, 0 100%);
+    clip-path: polygon(0% 0%, calc(100% - 1.2rem) 0%, 100% 50%, calc(100% - 1.2rem) 100%, 0 100%);
   }
 }
 
@@ -35,7 +34,7 @@ $link-gap: map.get(var.$scale, 700) * .5;
   }
 
   * + & {
-    margin-top: map.get(var.$scale, 800);
+    margin-top: map.get($scale, 800);
   }
 
   @media screen and (max-width: 575px) {

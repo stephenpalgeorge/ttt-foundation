@@ -1,9 +1,10 @@
 @layout('layouts/main')
 @set('title', 'Home')
-@set('description', '<meta name="description" content="These Three Things Foundation, bringing faith, hope and love to the people and places that need them.">')
+@set('description', 'These Three Things Foundation, bringing faith, hope and love to the people and places that need them')
 
 @section('assets')
   <link rel="stylesheet" href="css/components/link-button.css">
+  <link rel="stylesheet" href="css/components/block.css">
 @end
 
 @section('content')
@@ -45,7 +46,19 @@
 
         <section>
           <h2>Get to know some of our brands.</h2>
+          <p class="blur">These Three Things Foundation is just getting started...check back here soon to see some of our awesome projects.</p>
         </section>
+
+        <hr>
+
+        @!component('components/block', {
+          title: "The Fund",
+          bodyText: "The \"These Three Things\" Fund exists to provide financial support to innovative projects and world-changing voices. Grants are awarded quarterly.",
+          linkUrl: "/",
+          linkLabel: "Find out how to apply",
+          imageSrc: "/assets/fhl-designs/light-in-darkness--tote-bag--cream.jpeg",
+          imageAlt: "Some alt text here",
+        })
       </article>
     </div>
   </main>

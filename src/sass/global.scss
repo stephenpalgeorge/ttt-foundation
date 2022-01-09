@@ -6,7 +6,7 @@
 // LAYOUT
 // ----------
 main {
-  padding-top: map.get(var.$scale, 900);
+  padding-block: map.get(var.$scale, 900);
 }
 
 div.container {
@@ -19,7 +19,7 @@ div.container {
 // TYPOGRAPHY
 // ----------
 h1, h2, h3, h4, h5, h6 {
-  font-family: var.$font--serif;
+  font-family: map.get(var.$fonts, serif);
 }
 
 h1 {
@@ -38,9 +38,15 @@ h1 {
   }
 }
 
+h2 {
+  & + * {
+    margin-top: map.get(var.$scale, 700);
+  }
+}
+
 p {
   max-width: 70ch;
-  font-family: var.$font--sans-serif;
+  font-family: map.get(var.$fonts, sans-serif);
   font-size: var.$font-size--base;
   line-height: 2;
   & + * {
@@ -51,18 +57,26 @@ p {
     font-size: var.$font-size--lead;
   }
 
+  &.lead {
+    font-size: var.$font-size--lead;
+  }
+
   &.tagline {
-    font-family: var.$font--cursive;
+    font-family: map.get(var.$fonts, cursive);
     font-size: var.$font-size--title;
     line-height: 1;
   }
+}
+
+a {
+  font-family: map.get(var.$fonts, serif);
 }
 
 // ----------
 // IMAGES
 // ----------
 img#global-background {
-  z-index: -1;
+  z-index: -3;
   position: fixed;
   bottom: 0;
   left: 50%;
@@ -79,7 +93,7 @@ hr {
   $gap: func.extend-scale(1100);
   position: relative;
   border: none;
-  border-bottom: 1px solid var.$clr--dark;
+  border-bottom: 1px solid map.get(var.$colours, dark);
   overflow: visible;
 
   * + & { margin-top: #{$gap}rem; }
@@ -98,7 +112,7 @@ hr {
     line-height: 2rem;
     font-size: var.$font-size--lead;
     font-weight: 900;
-    background-color: var.$clr--light;
+    background-color: map.get(var.$colours, light);
   }
 }
 
