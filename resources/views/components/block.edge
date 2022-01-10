@@ -3,6 +3,7 @@
   - title [string]: The title text for the section. Rendered as an h2. *Required*
   - bodyText [string]: The longer description text that floats above the image content. *Required*
   - linkUrl [string]: The target url for the section button.
+  - linkRoute [string]: The name of the route that the link should go to. This supercede's the `linkUrl` field.
   - linkLabel [string]: The text that will be displayed in the button.
   - imageSrc [string]: Path to the image resource.
   - imageAlt [string]: Alternative text for the image.
@@ -12,8 +13,8 @@
   <div class="text-content">
     <div class="section-header">
       <h2>{{ title }}</h2>
-      @if(linkUrl && linkLabel)
-        <a href="{{ linkUrl }}">{{ linkLabel }}</a>
+      @if((linkUrl || linkRoute) && linkLabel)
+        <a href="{{ linkRoute ? route(linkRoute) : linkUrl }}">{{ linkLabel }}</a>
       @end
     </div>
 

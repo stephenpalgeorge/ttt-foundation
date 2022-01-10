@@ -16,4 +16,16 @@ export default class PagesController {
   public async contact({ view }: HttpContextContract) {
     return view.render('contact');
   }
+
+  public async thinkTank({ view }: HttpContextContract) {
+    return view.render('think-tank');
+  }
+
+  public async network({ view }: HttpContextContract) {
+    return view.render('network');
+  }
+
+  public async platform({ view }: HttpContextContract) {
+    return view.render('platform');
+  }
 }

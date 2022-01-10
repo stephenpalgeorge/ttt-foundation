@@ -2,6 +2,14 @@
 @use './functions' as func;
 @use './variables' as var;
 
+html,
+html:focus-within {
+  scroll-behavior: smooth;
+  *[id] {
+    scroll-margin-top: 6rem;
+  }
+}
+
 // ----------
 // LAYOUT
 // ----------

@@ -48,6 +48,7 @@
     h2 {
       font-size: map.get($scale, 800);
       text-transform: uppercase;
+      max-width: 11ch;
       & + * {
         margin-top: map.get($scale, 400) !important;
       }

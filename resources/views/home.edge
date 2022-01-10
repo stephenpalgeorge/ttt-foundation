@@ -24,19 +24,19 @@
           </p>
           <div class="link-row">
             @!component('components/link-button', {
-              path: '/think-tank',
+              path: '#think-tank',
               label: 'Think Tank',
             })
             @!component('components/link-button', {
-              path: '/fund',
+              path: '#fund',
               label: 'Fund',
             })
             @!component('components/link-button', {
-              path: '/network',
+              path: '#network',
               label: 'Network',
             })
             @!component('components/link-button', {
-              path: '/platform',
+              path: '#platform',
               label: 'Platform',
             })
           </div>
@@ -52,12 +52,49 @@
         <hr>
 
         @!component('components/block', {
+          title: "The Think Tank",
+          bodyText: "\"These Three Things\" commissions inspiring, thought-provoking, thought-leading research and social & theological commentary.",
+          linkRoute: "pages.think-tank",
+          linkLabel: "Read our latest pieces",
+          imageSrc: "/assets/fhl-designs/light-in-darkness--tote-bag--cream.jpeg",
+          imageAlt: "The FHL 'Light in Darkness' design on a tote bag.",
+          id: "think-tank",
+        })
+
+        <hr>
+
+        @!component('components/block', {
           title: "The Fund",
           bodyText: "The \"These Three Things\" Fund exists to provide financial support to innovative projects and world-changing voices. Grants are awarded quarterly.",
-          linkUrl: "/",
+          linkRoute: "pages.fund-apply",
           linkLabel: "Find out how to apply",
           imageSrc: "/assets/fhl-designs/light-in-darkness--tote-bag--cream.jpeg",
-          imageAlt: "Some alt text here",
+          imageAlt: "The FHL 'Light in Darkness' design on a tote bag.",
+          id: 'fund',
+        })
+
+        <hr>
+
+        @!component('components/block', {
+          title: "The Network",
+          bodyText: "The \"These Three Things\" network provides access to professional expertise across a wide range of sectors and skill-sets to help empower the projects that we support.",
+          linkRoute: "pages.network",
+          linkLabel: "Get connected",
+          imageSrc: "/assets/fhl-designs/light-in-darkness--tote-bag--cream.jpeg",
+          imageAlt: "The FHL 'Light in Darkness' design on a tote bag.",
+          id: "network",
+        })
+
+        <hr>
+
+        @!component('components/block', {
+          title: "The Platform",
+          bodyText: "The \"These Three Things\" platform gives an opportunity for otherwise unheard voices to find an audience.",
+          linkRoute: "pages.platform",
+          linkLabel: "Find out more",
+          imageSrc: "/assets/fhl-designs/light-in-darkness--tote-bag--cream.jpeg",
+          imageAlt: "The FHL 'Light in Darkness' design on a tote bag.",
+          id: "platform",
         })
       </article>
     </div>

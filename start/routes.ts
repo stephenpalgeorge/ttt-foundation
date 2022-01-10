@@ -24,3 +24,6 @@ Route.get('/', 'PagesController.home').as('pages.home');
 Route.get('/read-more', 'PagesController.readMore').as('pages.read-more');
 Route.get('/apply', 'PagesController.fundApply').as('pages.fund-apply');
 Route.get('/contact', 'PagesController.contact').as('pages.contact');
+Route.get('/think-tank', 'PagesController.thinkTank').as('pages.think-tank');
+Route.get('/network', 'PagesController.network').as('pages.network');
+Route.get('/platform', 'PagesController.platform').as('pages.platform');
