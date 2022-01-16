@@ -55,20 +55,25 @@
     }
 
     a {
+      $bg: map.get($colours, brand);
       display: inline-block;
       width: 100%;
       padding-block: map.get($scale, 300);
       text-align: center;
 
       border: $frame--base;
-      background-color: map.get($colours, brand);
       color: map.get($colours, light);
       text-decoration: none;
       font-weight: 900;
-
       transition: background-color .25s ease;
-      &:hover {
-        background-color: darken(map.get($colours, brand), 10%);
+
+      @each $name, $hex in $colours {
+        &.theme--#{$name} {
+          background-color: $hex;
+          &:hover {
+            background-color: darken($hex, 10%);
+          }
+        }
       }
     }
 

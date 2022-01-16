@@ -1,6 +1,6 @@
 @use 'sass:map';
 @use './functions' as func;
-@use './variables' as var;
+@use './variables' as *;
 
 html,
 html:focus-within {
@@ -14,7 +14,7 @@ html:focus-within {
 // LAYOUT
 // ----------
 main {
-  padding-block: map.get(var.$scale, 900);
+  padding-block: map.get($scale, 900);
 }
 
 div.container {
@@ -27,57 +27,58 @@ div.container {
 // TYPOGRAPHY
 // ----------
 h1, h2, h3, h4, h5, h6 {
-  font-family: map.get(var.$fonts, serif);
+  font-family: map.get($fonts, serif);
 }
 
 h1 {
   max-width: 20ch;
-  font-size: var.$font-size--title;
+  font-size: $font-size--title;
+  font-weight: 900;
   line-height: 1.2;
   margin-top: 6rem;
 
   & + * {
-    margin-top: map.get(var.$scale, 900);
+    margin-top: map.get($scale, 900);
   }
 
   @media screen and (max-width: 575px) {
-    font-size: map.get(var.$scale, 800);
+    font-size: map.get($scale, 800);
     line-height: 1.4;
   }
 }
 
 h2 {
   & + * {
-    margin-top: map.get(var.$scale, 700);
+    margin-top: map.get($scale, 700);
   }
 }
 
 p {
   max-width: 70ch;
-  font-family: map.get(var.$fonts, sans-serif);
-  font-size: var.$font-size--base;
+  font-family: map.get($fonts, sans-serif);
+  font-size: $font-size--base;
   line-height: 2;
   & + * {
-    margin-top: map.get(var.$scale, 600);
+    margin-top: map.get($scale, 600);
   }
 
   @media screen and (max-width: 575px) {
-    font-size: var.$font-size--lead;
+    font-size: $font-size--lead;
   }
 
   &.lead {
-    font-size: var.$font-size--lead;
+    font-size: $font-size--lead;
   }
 
   &.tagline {
-    font-family: map.get(var.$fonts, cursive);
-    font-size: var.$font-size--title;
+    font-family: map.get($fonts, cursive);
+    font-size: $font-size--title;
     line-height: 1;
   }
 }
 
 a {
-  font-family: map.get(var.$fonts, serif);
+  font-family: map.get($fonts, serif);
 }
 
 // ----------
@@ -99,9 +100,10 @@ img#global-background {
 // ----------
 hr {
   $gap: func.extend-scale(1100);
+  $clr: map.get($colours, grey);
   position: relative;
   border: none;
-  border-bottom: 1px solid map.get(var.$colours, dark);
+  border-bottom: 1px solid $clr;
   overflow: visible;
 
   * + & { margin-top: #{$gap}rem; }
@@ -115,12 +117,13 @@ hr {
     width: 2rem;
     height: 2rem;
     transform: translate(-50%, -50%);
-    padding-inline: map.get(var.$scale, 200);
+    padding-inline: map.get($scale, 200);
     text-align: center;
     line-height: 2rem;
-    font-size: var.$font-size--lead;
+    font-size: $font-size--lead;
     font-weight: 900;
-    background-color: map.get(var.$colours, light);
+    background-color: map.get($colours, light);
+    color: $clr;
   }
 }
 

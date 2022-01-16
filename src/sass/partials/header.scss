@@ -1,27 +1,27 @@
 @use 'sass:map';
-@use '../variables' as var;
+@use '../variables' as *;
 
 header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: map.get(var.$colours, light);
+  background-color: map.get($colours, light);
+  border-bottom: 1px solid rgba(map.get($colours, grey), .6);
+  box-shadow: 0 .4rem .5rem 0 rgba(map.get($colours, dark), .16);
   z-index: 1;
 
   nav {
     width: 90%;
     max-width: 45rem;
     margin-inline: auto;
-    padding-block: map.get(var.$scale, 700);
+    padding-block: map.get($scale, 600);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(map.get(var.$colours, dark), .1);
-    box-shadow: 0 .6rem .5rem -.5rem rgba(map.get(var.$colours, dark), .28);
 
     .site-branding img {
-      width: map.get(var.$scale, 800);
+      width: map.get($scale, 800);
       height: auto;
     }
 
@@ -30,18 +30,31 @@ header {
       list-style-type: none;
 
       li + li {
-        margin-left: map.get(var.$scale, 800);
+        margin-left: map.get($scale, 800);
       }
 
       li a {
-        font-family: map.get(var.$fonts, sans-serif);
+        font-family: map.get($fonts, sans-serif);
         text-transform: uppercase;
-        color: map.get(var.$colours, dark);
+        color: map.get($colours, dark);
         text-decoration: none;
 
         &:hover {
           text-decoration: underline;
           text-decoration-thickness: .2em;
+        }
+
+        &.button {
+          $bg: map.get($colours, brand);
+          padding: map.get($scale, 200) map.get($scale, 500);
+          background-color: $bg;
+          color: map.get($colours, light);
+          font-weight: 900;
+
+          transition: background-color .25s ease;
+          &:hover {
+            background-color: darken($bg, 10%);
+          }
         }
       }
     }

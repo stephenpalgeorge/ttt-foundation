@@ -5,8 +5,8 @@ export default class PagesController {
     return view.render('home');
   }
 
-  public async readMore({ view }: HttpContextContract) {
-    return view.render('read-more');
+  public async about({ view }: HttpContextContract) {
+    return view.render('about');
   }
 
   public async fundApply({ view }: HttpContextContract) {
